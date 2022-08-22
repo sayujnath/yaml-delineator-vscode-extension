@@ -9,17 +9,22 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:yaml-delineator-vscode-extension.helloWorld"
-  ],
+	"activationEvents": [
+		"onCustomEditor:catCustoms.catScratch"
+	],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "yaml-delineator-vscode-extension.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "customEditors": [
+			{
+				"viewType": "catCustoms.catScratch",
+				"displayName": "Cat Scratch",
+				"selector": [
+					{
+						"filenamePattern": "*.cscratch"
+					}
+				]
+			}
+		]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
